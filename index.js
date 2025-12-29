@@ -1,9 +1,14 @@
+import "dotenv/config";
 import { Client, GatewayIntentBits } from "discord.js";
 import { joinVoiceChannel } from "@discordjs/voice";
+import bots from "./bots.js";
 
-const BOTS = [
+bots.forEach((botConfig, index) => {
+  if (!botConfig.token) {
+    console.log(`Token missing for bot ${index + 1}`);
+    return;
+  }
 
-BOTS.forEach((botConfig, index) => {
   const client = new Client({
     intents: [
       GatewayIntentBits.Guilds,
@@ -30,8 +35,9 @@ BOTS.forEach((botConfig, index) => {
       selfMute: false
     });
 
-    console.log(`Bot ${index + 1} joined its voice channel`);
+    console.log(`Bot ${index + 1} joined voice`);
   });
 
   client.login(botConfig.token);
 });
+
