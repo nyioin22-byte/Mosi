@@ -1,0 +1,25 @@
+const bots = [
+  {
+    token: process.env.BOT1_TOKEN,
+    guildId: "1451845477581590571",
+    voiceChannelId: "1452693923213611108"
+  },
+  {
+    token: process.env.BOT2_TOKEN,
+    guildId: "1451845477581590571",
+    voiceChannelId: "1452693929680965633"
+  },
+  {
+    token: process.env.BOT3_TOKEN,
+    guildId: "1451845477581590571",
+    voiceChannelId: "1452693926652936192"
+  },
+  {
+    token: process.env.BOT4_TOKEN,
+    guildId: "1451845477581590571",
+    voiceChannelId: "1452693933070221402"
+  }
+];
+
+export default bots;
+
